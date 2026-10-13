@@ -59,7 +59,7 @@ class LayoutSetting extends Model
                     'id' => 'header-nav',
                     'config' => [
                         'brand_name' => 'Protofoly',
-                        'brand_badge' => 'v1.0',
+                        'brand_badge' => '',
                         'brand_url' => '/',
                         'links' => [
                             ['label' => 'Work', 'url' => '/#work', 'is_external' => false],

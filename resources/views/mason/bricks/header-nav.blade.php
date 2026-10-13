@@ -1,6 +1,6 @@
 @props([
     'brand_name' => config('app.name', 'Protofoly'),
-    'brand_badge' => 'v1.0',
+    'brand_badge' => '',
     'brand_url' => '/',
     'links' => [],
     'show_theme_toggle' => true,
@@ -33,7 +33,7 @@
             </span>
             <span class="flex items-center gap-1.5">
                 <span class="font-bold tracking-tight text-zinc-900 dark:text-white">{{ $brand_name }}</span>
-                @if(filled($brand_badge))
+                @if(!blank($brand_badge))
                     <span class="inline-flex items-center rounded-full bg-amber-500/10 px-1.5 py-0.5 text-[10px] font-medium text-amber-600 dark:bg-amber-400/10 dark:text-amber-400">{{ $brand_badge }}</span>
                 @endif
             </span>
