@@ -1,4 +1,12 @@
-<!-- Site Header / Navbar -->
+@php
+    $layoutSetting = \App\Models\LayoutSetting::current();
+    $customHeaderBlocks = $layoutSetting->header_content;
+@endphp
+
+@if(!empty($customHeaderBlocks))
+    {!! mason($customHeaderBlocks, \App\Mason\HeaderBricks::all())->toUnsafeHtml() !!}
+@else
+<!-- Site Header / Navbar (Fallback) -->
 <header id="site-header" class="sticky top-0 z-50 w-full border-b border-zinc-200/80 bg-zinc-50/80 backdrop-blur-md dark:border-zinc-800/80 dark:bg-zinc-950/80">
     <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <!-- Brand Logo -->
@@ -28,16 +36,6 @@
 
         <!-- Actions / Controls -->
         <div class="flex items-center gap-3">
-            <!-- Dashboard Link -->
-            <a id="nav-dashboard-link" href="{{ url('/dashboard') }}" class="hidden sm:inline-flex items-center gap-1.5 rounded-lg border border-zinc-200 px-3 py-1.5 text-xs font-medium text-zinc-700 transition hover:bg-zinc-100 hover:text-zinc-900 dark:border-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-900 dark:hover:text-white">
-                <svg class="h-3.5 w-3.5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect width="7" height="9" x="3" y="3" rx="1"></rect>
-                    <rect width="7" height="5" x="14" y="3" rx="1"></rect>
-                    <rect width="7" height="9" x="14" y="12" rx="1"></rect>
-                    <rect width="7" height="5" x="3" y="16" rx="1"></rect>
-                </svg>
-                <span>Studio Panel</span>
-            </a>
 
             <!-- Theme Toggle Button -->
             <button id="theme-toggle-btn" type="button" aria-label="Toggle dark mode" class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-zinc-200 text-zinc-600 transition hover:bg-zinc-100 hover:text-zinc-900 dark:border-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-white">
@@ -86,9 +84,6 @@
             <a id="mobile-nav-link-about" href="{{ url('/#about') }}" class="rounded-md px-3 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800">About</a>
             <a id="mobile-nav-link-contact" href="{{ url('/#contact') }}" class="rounded-md px-3 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800">Contact</a>
             <div class="mt-2 flex flex-col gap-2 pt-2 border-t border-zinc-200 dark:border-zinc-800">
-                <a id="mobile-dashboard-link" href="{{ url('/dashboard') }}" class="flex items-center justify-center gap-2 rounded-lg border border-zinc-200 px-3 py-2 text-xs font-medium text-zinc-700 dark:border-zinc-700 dark:text-zinc-300">
-                    Studio Panel
-                </a>
                 <a id="mobile-contact-cta" href="{{ url('/#contact') }}" class="flex items-center justify-center rounded-lg bg-amber-500 px-4 py-2.5 text-xs font-semibold text-white shadow-sm hover:bg-amber-600">
                     Let's Talk
                 </a>
@@ -96,3 +91,4 @@
         </nav>
     </div>
 </header>
+@endif

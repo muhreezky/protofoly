@@ -1,4 +1,12 @@
-<!-- Site Footer -->
+@php
+    $layoutSetting = \App\Models\LayoutSetting::current();
+    $customFooterBlocks = $layoutSetting->footer_content;
+@endphp
+
+@if(!empty($customFooterBlocks))
+    {!! mason($customFooterBlocks, \App\Mason\FooterBricks::all())->toUnsafeHtml() !!}
+@else
+<!-- Site Footer (Fallback) -->
 <footer id="site-footer" class="border-t border-zinc-200/80 bg-white dark:border-zinc-800/80 dark:bg-zinc-950 transition-colors">
     <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
@@ -60,3 +68,4 @@
         </div>
     </div>
 </footer>
+@endif
