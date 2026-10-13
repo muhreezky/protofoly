@@ -24,6 +24,11 @@
 
         <!-- Mason Styles -->
         @masonStyles
+        <style>
+            .mason-block-controls {
+                z-index: 100 !important;
+            }
+        </style>
     </head>
     <body class="antialiased bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100">
         <main>
