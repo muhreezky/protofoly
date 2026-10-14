@@ -46,7 +46,7 @@ class HeaderNav extends Brick
     {
         return view('mason.bricks.header-nav', [
             'brand_name' => $config['brand_name'] ?? config('app.name', 'Protofoly'),
-            'brand_badge' => $config['brand_badge'] ?? 'v1.0',
+            'brand_badge' => $config['brand_badge'] ?? null,
             'brand_url' => $config['brand_url'] ?? '/',
             'links' => $config['links'] ?? [
                 ['label' => 'Work', 'url' => '/#work', 'is_external' => false],
