@@ -1,6 +1,7 @@
 @php
     $layoutSetting = \App\Models\LayoutSetting::current();
     $customHeaderBlocks = $layoutSetting->header_content;
+    $brand_badge = $customHeaderBlocks['brand_badge'] ?? null;
 @endphp
 
 @if(!empty($customHeaderBlocks))
@@ -20,7 +21,9 @@
             </span>
             <span class="flex items-center gap-1.5">
                 <span class="font-bold tracking-tight text-zinc-900 dark:text-white">{{ config('app.name', 'Protofoly') }}</span>
-                <span class="inline-flex items-center rounded-full bg-amber-500/10 px-1.5 py-0.5 text-[10px] font-medium text-amber-600 dark:bg-amber-400/10 dark:text-amber-400">v1.0</span>
+                @if(!blank($brand_badge))
+                    <span class="inline-flex items-center rounded-full bg-amber-500/10 px-1.5 py-0.5 text-[10px] font-medium text-amber-600 dark:bg-amber-400/10 dark:text-amber-400">{{ $brand_badge }}</span>
+                @endif
             </span>
         </a>
 
