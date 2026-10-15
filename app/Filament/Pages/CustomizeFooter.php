@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Filament\Pages;
 
-use App\Mason\FooterBricks;
+use App\Mason\Bricks\FooterBricks;
 use App\Models\LayoutSetting;
 use Awcodes\Mason\Mason;
 use BackedEnum;

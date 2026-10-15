@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 return [
     'generator' => [
-        'namespace' => 'App\\Mason',
+        'namespace' => 'App\\Mason\\Bricks',
         'views_path' => 'mason',
     ],
     'preview' => [

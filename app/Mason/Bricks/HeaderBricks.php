@@ -2,15 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Mason;
+namespace App\Mason\Bricks;
 
-use App\Mason\Bricks\FooterBottom;
-use App\Mason\Bricks\FooterColumns;
-use App\Mason\Bricks\FooterNewsletter;
 use Awcodes\Mason\Brick;
 use Awcodes\Mason\Bricks\Section;
 
-class FooterBricks
+class HeaderBricks
 {
     /**
      * @return array<class-string<Brick>>
@@ -18,9 +15,8 @@ class FooterBricks
     public static function all(): array
     {
         return [
-            FooterColumns::class,
-            FooterBottom::class,
-            FooterNewsletter::class,
+            HeaderNav::class,
+            AnnouncementBar::class,
             Section::class,
         ];
     }

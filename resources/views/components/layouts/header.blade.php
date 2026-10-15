@@ -5,7 +5,7 @@
 @endphp
 
 @if(!empty($customHeaderBlocks))
-    {!! mason($customHeaderBlocks, \App\Mason\HeaderBricks::all())->toUnsafeHtml() !!}
+    {!! mason($customHeaderBlocks, \App\Mason\Bricks\HeaderBricks::all())->toUnsafeHtml() !!}
 @else
 <!-- Site Header / Navbar (Fallback) -->
 <header id="site-header" class="sticky top-0 z-50 w-full border-b border-zinc-200/80 bg-zinc-50/80 backdrop-blur-md dark:border-zinc-800/80 dark:bg-zinc-950/80">

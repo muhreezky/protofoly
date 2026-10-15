@@ -2,14 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Mason;
+namespace App\Mason\Bricks;
 
-use App\Mason\Bricks\AnnouncementBar;
-use App\Mason\Bricks\HeaderNav;
 use Awcodes\Mason\Brick;
 use Awcodes\Mason\Bricks\Section;
 
-class HeaderBricks
+class FooterBricks
 {
     /**
      * @return array<class-string<Brick>>
@@ -17,8 +15,9 @@ class HeaderBricks
     public static function all(): array
     {
         return [
-            HeaderNav::class,
-            AnnouncementBar::class,
+            FooterColumns::class,
+            FooterBottom::class,
+            FooterNewsletter::class,
             Section::class,
         ];
     }

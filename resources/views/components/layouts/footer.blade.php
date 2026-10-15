@@ -4,7 +4,7 @@
 @endphp
 
 @if(!empty($customFooterBlocks))
-    {!! mason($customFooterBlocks, \App\Mason\FooterBricks::all())->toUnsafeHtml() !!}
+    {!! mason($customFooterBlocks, \App\Mason\Bricks\FooterBricks::all())->toUnsafeHtml() !!}
 @else
 <!-- Site Footer (Fallback) -->
 <footer id="site-footer" class="border-t border-zinc-200/80 bg-white dark:border-zinc-800/80 dark:bg-zinc-950 transition-colors">
